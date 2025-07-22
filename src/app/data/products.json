@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "title": "Thermal Analysis",
+    "description": "Explore TGA, DSC, and DMA instruments",
+    "image": "thermal.jpg"
+  },
+  {
+    "id": "2",
+    "title": "Chromatography",
+    "description": "GC, HPLC, LC-MS analyzers for labs",
+    "image": "chromatography.jpg"
+  }
+]

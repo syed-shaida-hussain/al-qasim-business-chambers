@@ -1,0 +1,10 @@
+[
+    { "label": "Pharmaceuticals", "icon": "🧪", "bg": "from-pink-500 to-red-500" },
+    { "label": "Agriculture & Food", "icon": "🌾", "bg": "from-green-400 to-green-600" },
+    { "label": "Healthcare", "icon": "🏥", "bg": "from-blue-400 to-blue-600" },
+    { "label": "Academic R&D", "icon": "🔬", "bg": "from-purple-500 to-indigo-600" },
+    { "label": "Petrochemicals", "icon": "🛢️", "bg": "from-yellow-500 to-yellow-700" },
+    { "label": "Industrial QA", "icon": "🏭", "bg": "from-gray-500 to-gray-700" },
+    { "label": "Environmental", "icon": "🌍", "bg": "from-teal-400 to-teal-600" },
+    { "label": "Chemicals", "icon": "⚗️", "bg": "from-orange-400 to-orange-600" }
+]

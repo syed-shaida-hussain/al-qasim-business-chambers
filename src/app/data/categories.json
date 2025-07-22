@@ -1,0 +1,8 @@
+[
+    {"name" : "Thermal Analysis" , "value" : "thermal-analysis"},
+    {"name" : "Chromatography" , "value" : "chromatography"},
+    {"name" : "Spectroscopy" , "value" : "spectroscopy"},
+    {"name" : "Extraction Systems" , "value" : "extraction systems"},
+    {"name" : "Spray Dryers" , "value" : "spray-dryers"},
+    {"name" : "Lab Automation" , "value" : "lab-automation"}
+]

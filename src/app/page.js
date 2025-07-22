@@ -1,7 +1,11 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
-import MicroscopeImg from "../../public/microscope.jpg"
+import Carousel from "./components/Carousel";
+import categories from "../app/data/categories.json"
+import partners from "../app/data/partners.json"
+import products from "../app/data/products.json"
+
+
 
 
 export default function Home() {
@@ -29,24 +33,19 @@ export default function Home() {
           </div>
         </section>
 
+        <Carousel />
+
         <section className="py-16 bg-gray-100 px-6">
           <h2 className="text-2xl font-semibold text-center mb-10">Featured Categories</h2>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {[
-              "Thermal Analysis",
-              "Chromatography",
-              "Spectroscopy",
-              "Extraction Systems",
-              "Spray Dryers",
-              "Lab Automation",
-            ].map((category) => (
+            {categories.map(({name,value}) => (
               <div
-                key={category}
+                key={name}
                 className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition"
               >
-                <h3 className="text-xl font-medium text-blue-800">{category}</h3>
+                <h3 className="text-xl font-medium text-blue-800">{name}</h3>
                 <p className="mt-2 text-sm text-gray-600">
-                  Explore instruments for {category.toLowerCase()} applications.
+                  Explore instruments for {name.toLowerCase()} applications.
                 </p>
               </div>
             ))}
@@ -62,16 +61,7 @@ export default function Home() {
     </p>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                {[
-                { label: "Pharmaceuticals", icon: "🧪", bg: "from-pink-500 to-red-500" },
-                { label: "Agriculture & Food", icon: "🌾", bg: "from-green-400 to-green-600" },
-                { label: "Healthcare", icon: "🏥", bg: "from-blue-400 to-blue-600" },
-                { label: "Academic R&D", icon: "🔬", bg: "from-purple-500 to-indigo-600" },
-                { label: "Petrochemicals", icon: "🛢️", bg: "from-yellow-500 to-yellow-700" },
-                { label: "Industrial QA", icon: "🏭", bg: "from-gray-500 to-gray-700" },
-                { label: "Environmental", icon: "🌍", bg: "from-teal-400 to-teal-600" },
-                { label: "Chemicals", icon: "⚗️", bg: "from-orange-400 to-orange-600" },
-                ].map(({ label, icon, bg }) => (
+                {partners.map(({ label, icon, bg }) => (
                 <div
                     key={label}
                     className={`bg-gradient-to-r ${bg} text-white rounded-xl p-6 text-center shadow-md hover:shadow-xl transform hover:scale-105 transition duration-300`}
@@ -86,21 +76,14 @@ export default function Home() {
         <section className="py-16 bg-gray-100 px-6">
           <h2 className="text-2xl font-semibold text-center mb-10">Featured Products</h2>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {[
-              "Thermal Analysis",
-              "Chromatography",
-              "Spectroscopy",
-              "Extraction Systems",
-              "Spray Dryers",
-              "Lab Automation",
-            ].map((category) => (
+            {products.map(({id,title,description,image}) => (
               <div
-                key={category}
+                key={id}
                 className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition"
               >
-                <h3 className="text-xl font-medium text-blue-800">{category}</h3>
+                <h3 className="text-xl font-medium text-blue-800">{title}</h3>
                 <p className="mt-2 text-sm text-gray-600">
-                  Explore instruments for {category.toLowerCase()} applications.
+                  {description}
                 </p>
               </div>
             ))}
