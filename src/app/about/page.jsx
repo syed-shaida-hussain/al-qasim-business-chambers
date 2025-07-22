@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
-// import MicroscopeImg from "../../../public/microscope.jpg"
-// import Image from "next/image";
+import categories from "../data/categories.json"
+import partners from "../data/partners.json"
 
 export default function About() {
   return (
@@ -40,13 +40,6 @@ Our dedicated technical team ensures smooth implementation, training, and post-s
 
               </p>
             </div>
-            {/* <div className="flex-1 mt-8 md:mt-0">
-              <Image
-                src= {MicroscopeImg}
-                alt="Scientific equipment"
-                className="rounded-xl shadow-lg"
-              />
-            </div> */}
           </section>
 
           <section className="bg-white p-8 rounded-xl shadow-md">
@@ -69,20 +62,13 @@ Our dedicated technical team ensures smooth implementation, training, and post-s
               What We Offer
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
-              {[
-                { title: "Thermal Analysis", desc: "TGA, DSC, DMA & hyphenated techniques" },
-                { title: "Chromatography", desc: "GC, HPLC, LC-MS and custom GC analyzers" },
-                { title: "Spectroscopy", desc: "UV-VIS, FTIR, Fluorescence, NIR & Microscopy" },
-                { title: "Sample Prep & Extraction", desc: "Rotavapors, Soxhlet, Spray Dryers" },
-                { title: "Inorganic Analysis", desc: "AAS, ICP-OES, ICP-MS, Microwave Digestion" },
-                { title: "Portable & Process Systems", desc: "Rugged field-ready and inline tools" },
-              ].map((item) => (
+              {categories.map(({name,value}) => (
                 <div
-                  key={item.title}
+                  key={name}
                   className="bg-white rounded-xl p-6 shadow hover:shadow-lg transition"
                 >
-                  <h3 className="text-xl font-semibold text-primary mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.desc}</p>
+                  <h3 className="text-xl font-semibold text-primary mb-2">{name}</h3>
+                  <p className="text-gray-600">{value}</p>
                 </div>
               ))}
             </div>
@@ -94,16 +80,7 @@ Our dedicated technical team ensures smooth implementation, training, and post-s
             </h2>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                {[
-                { label: "Pharmaceuticals", icon: "🧪", bg: "from-pink-500 to-red-500" },
-                { label: "Agriculture & Food", icon: "🌾", bg: "from-green-400 to-green-600" },
-                { label: "Healthcare", icon: "🏥", bg: "from-blue-400 to-blue-600" },
-                { label: "Academic R&D", icon: "🔬", bg: "from-purple-500 to-indigo-600" },
-                { label: "Petrochemicals", icon: "🛢️", bg: "from-yellow-500 to-yellow-700" },
-                { label: "Industrial QA", icon: "🏭", bg: "from-gray-500 to-gray-700" },
-                { label: "Environmental", icon: "🌍", bg: "from-teal-400 to-teal-600" },
-                { label: "Chemicals", icon: "⚗️", bg: "from-orange-400 to-orange-600" },
-                ].map(({ label, icon, bg }) => (
+                {partners.map(({ label, icon, bg }) => (
                 <div
                     key={label}
                     className={`bg-gradient-to-r ${bg} text-white rounded-xl p-6 text-center shadow-md hover:shadow-xl transform hover:scale-105 transition duration-300`}
